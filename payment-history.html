@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment History</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            PrimeMortgage
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="loan-application.html">Apply Loan</a></li>
+            <li><a href="calculator.html">EMI Calculator</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="payment-history.html">Payments</a></li>
+        </ul>
+
+    </nav>
+
+    <!-- Payment History -->
+
+    <section class="table-section">
+
+        <h2>Payment History</h2>
+
+        <br>
+
+        <!-- Search Box -->
+
+        <input
+            type="text"
+            id="searchInput"
+            class="search-box"
+            placeholder="Search by Payment ID, Date or Status..."
+            onkeyup="searchPayments()"
+        >
+
+        <!-- Filter -->
+
+        <select
+            id="statusFilter"
+            class="search-box"
+            onchange="filterPayments()"
+        >
+
+            <option value="all">All Payments</option>
+            <option value="paid">Paid</option>
+            <option value="pending">Pending</option>
+            <option value="overdue">Overdue</option>
+
+        </select>
+
+        <br><br>
+
+        <!-- Table -->
+
+        <table id="paymentTable">
+
+            <thead>
+
+                <tr>
+                    <th>Payment ID</th>
+                    <th>Date</th>
+                    <th>Amount</th>
+                    <th>Method</th>
+                    <th>Status</th>
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td>PM101</td>
+                    <td>01 Jan 2026</td>
+                    <td>$1250</td>
+                    <td>Bank Transfer</td>
+                    <td class="paid">Paid</td>
+                </tr>
+
+                <tr>
+                    <td>PM102</td>
+                    <td>01 Feb 2026</td>
+                    <td>$1250</td>
+                    <td>Credit Card</td>
+                    <td class="paid">Paid</td>
+                </tr>
+
+                <tr>
+                    <td>PM103</td>
+                    <td>01 Mar 2026</td>
+                    <td>$1250</td>
+                    <td>Bank Transfer</td>
+                    <td class="pending">Pending</td>
+                </tr>
+
+                <tr>
+                    <td>PM104</td>
+                    <td>01 Apr 2026</td>
+                    <td>$1250</td>
+                    <td>Debit Card</td>
+                    <td class="overdue">Overdue</td>
+                </tr>
+
+                <tr>
+                    <td>PM105</td>
+                    <td>01 May 2026</td>
+                    <td>$1250</td>
+                    <td>Bank Transfer</td>
+                    <td class="paid">Paid</td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </section>
+
+    <script src="payment.js"></script>
+
+</body>
+</html>
